@@ -48,8 +48,10 @@ section.chat__section {
     display: flex;
     flex-direction: row;
 }
-.bold,.italic,.strike,.link,.quote{
+.bold,.italic,.strike,.link,.quote,.bullets,.numbers,.code{
     padding: 4px;
+    margin-bottom:10px;
+    margin-right: 5px;
     /* color: white; */
 }
 .bolder{
@@ -69,6 +71,7 @@ textarea {
     outline: none;
     background: #FBFBFB;
 }
+
 .send{
     position: relative;
     right: 0;

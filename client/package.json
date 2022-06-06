@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
     "firebase": "^9.8.2",
+    "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-color-palette": "^6.2.0",
     "react-color-picker": "^4.0.1",
