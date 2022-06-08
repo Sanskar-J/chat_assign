@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { io } from "socket.io-client";
 import "./App.css";
 import $ from "jquery";
+import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react";
 // import ReactTextFormat from 'react-text-format';
 
 var markup, appendMesage, sendMessage;
@@ -40,6 +41,13 @@ const App = () => {
   var [bullets, setBullets] = useState(false);
   var [numbers, setNumbers] = useState(false);
   var [code, setCode] = useState(false);
+  var [emoji, setEmoji] = useState(false);
+
+  const onEmojiClick = (event, emojiObject) => {
+    let textarea = document.querySelector("#textarea");
+
+    textarea.value += emojiObject.emoji;
+  };
 
   if (bold === true) $(".bold").css("border", "1px solid black");
   else $(".bold").css("border", "none");
@@ -195,8 +203,29 @@ const App = () => {
             placeholder="Write a message..."
             onKeyUp={handleEnter}
           ></textarea>
-          <div className="send">
-            <img src="/send.png" alt="" height="25" />
+          <div className="format">
+            <div class="emoji">
+              <img
+                onClick={() => {
+                  emoji ? setEmoji(false) : setEmoji(true);
+                }}
+                src="/emoji.png"
+                height="25"
+                alt=""
+              />
+              {emoji && (
+                <Picker
+                  onEmojiClick={onEmojiClick}
+                  disableAutoFocus={true}
+                  skinTone={SKIN_TONE_MEDIUM_DARK}
+                  groupNames={{ smileys_people: "PEOPLE" }}
+                  native
+                />
+              )}
+            </div>
+            <div className="send">
+              <img src="/send.png" alt="" height="25" />
+            </div>
           </div>
         </div>
       </section>

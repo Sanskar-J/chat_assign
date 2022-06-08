@@ -48,7 +48,7 @@ section.chat__section {
     display: flex;
     flex-direction: row;
 }
-.bold,.italic,.strike,.link,.quote,.bullets,.numbers,.code{
+.bold,.italic,.strike,.link,.quote,.bullets,.numbers,.code,.emoji,.send{
     padding: 4px;
     margin-bottom:10px;
     margin-right: 5px;
@@ -72,13 +72,8 @@ textarea {
     background: #FBFBFB;
 }
 
-.send{
-    position: relative;
-    right: 0;
-    display: flex;
-    flex-direction: row;
-    padding-top: 20px;
-    align-self: flex-end;
+.send,.emoji{
+margin-top: 10px ;
 }
 .message {
     padding: 20px; 
